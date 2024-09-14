@@ -1,11 +1,13 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import RadialMenu from './components/radialMenu.vue';
+import UIModifier from './components/menuUIModifier.vue';
 
 const menuVisible = ref(false);
 const numMenuItems = ref(12);
 const cursorX = ref(0);
 const cursorY = ref(0);
+const menuRadius = ref(200);
 
 const handleClick = (event) => {
   menuVisible.value = !menuVisible.value;
@@ -20,11 +22,13 @@ onMounted(() => {
 
 <template>
   <h1>This is a radial menu prototype</h1>
+  <UIModifier v-model:radius="menuRadius"/>
   <RadialMenu
     :numItems="numMenuItems"
     :visible="menuVisible"
     :menuPosX="cursorX"
     :menuPosY="cursorY"
+    :radius="menuRadius"
   />
 </template>
 
