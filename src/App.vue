@@ -1,13 +1,13 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import RadialMenu from './components/radialMenu.vue';
-import UIModifier from './components/menuUIModifier.vue';
+import { ref, onMounted } from "vue";
+import RadialMenu from "./components/radialMenu.vue";
+import UIModifier from "./components/menuUIModifier.vue";
 
 const menuVisible = ref(false);
 const numMenuItems = ref(12);
+const menuRadius = ref(200);
 const cursorX = ref(0);
 const cursorY = ref(0);
-const menuRadius = ref(200);
 
 const handleClick = (event) => {
   menuVisible.value = !menuVisible.value;
@@ -16,13 +16,15 @@ const handleClick = (event) => {
 };
 
 onMounted(() => {
-  window.addEventListener('click', handleClick);
+  window.addEventListener("click", handleClick);
 });
+
+
 </script>
 
 <template>
   <h1>This is a radial menu prototype</h1>
-  <UIModifier v-model:radius="menuRadius"/>
+  <UIModifier v-model:radius="menuRadius" v-model:menuItems="numMenuItems" />
   <RadialMenu
     :numItems="numMenuItems"
     :visible="menuVisible"
