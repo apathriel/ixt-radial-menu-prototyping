@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>This is a radial menu prototype</h1>
+  <h1 style="user-select: none;">This is a radial menu prototype</h1>
   <UIModifier v-model:radius="menuRadius" v-model:menuItems="numMenuItems" />
   <RadialMenu
     :numItems="numMenuItems"
