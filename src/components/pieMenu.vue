@@ -6,7 +6,7 @@ const props = defineProps({
   numItems: { type: Number, default: 4 },
   menuPosX: { type: Number, default: 0 },
   menuPosY: { type: Number, default: 0 },
-  radius: { type: Number, default: 500 }, // Radius of the menu circle
+  radius: { type: Number, default: 200 }, // Radius of the menu circle
 });
 
 const visibilityToggle = computed(() => props.visible);
@@ -60,8 +60,8 @@ const handleItemClick = (itemNumber) => {
       <div 
         class="menu-item"
         :style="{
-          width: `${props.radius * 0.4}px`,
-          height: `${props.radius * 0.4}px`,
+          width: `${props.radius}px`,
+          height: `${props.radius}px`,
           backgroundColor: `hsl(${(index * 360) / props.numItems}, 70%, 50%)`,
           borderRadius: '50%',
           display: 'flex',

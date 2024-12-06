@@ -6,7 +6,7 @@ import UIModifier from "./components/menuUIModifier.vue";
 
 const menuVisible = ref(false);
 const numMenuItems = ref(12);
-const menuRadius = ref(500);
+const menuRadius = ref(200);
 const cursorX = ref(0);
 const cursorY = ref(0);
 
