@@ -64,14 +64,10 @@ const handleItemClick = (itemNumber) => {
           height: `${props.radius}px`,
           backgroundColor: `hsl(${(index * 360) / props.numItems}, 70%, 50%)`,
           borderRadius: '50%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          color: 'white',
-          fontWeight: 'bold',
           cursor: 'pointer',
         }"
       >
+      <span :style="{top: '1rem', position: 'relative', 'font-size': `max(${props.radius / 20}px, 1rem)`}"> {{ item }}</span>
       </div>
     </div>
   </div>
@@ -91,4 +87,10 @@ const handleItemClick = (itemNumber) => {
   left: 0;
   cursor: pointer;
 }
+
+.pie-slice:hover {
+  filter: brightness(1.5); /* Increases the brightness */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+}
+
 </style>
