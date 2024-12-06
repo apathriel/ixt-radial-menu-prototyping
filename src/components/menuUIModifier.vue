@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue';
 
 const props = defineProps({
-  radius: { type: Number, default: 200 },
+  radius: { type: Number, default: 500 },
   menuItems: {type: Number, default: 4}
 })
 
@@ -50,8 +50,8 @@ watch(itemsSliderValue, (_) => {
   <div @click="handleClick" class="ui-modifier-menu-container">
     <div class="slider-container" id="radius-slider-container">
       <label for="radiusSlider" class="slider-label">Radius:</label>
-      <input id="radiusSlider" v-model="radiusSliderValue" type="range" min="100" max="500" class="inputSlider">
-      <input v-model="radiusSliderValue" type="number" min="100" max="500">
+      <input id="radiusSlider" v-model="radiusSliderValue" type="range" min="100" max="1000" class="inputSlider">
+      <input v-model="radiusSliderValue" type="number" min="100" max="1000">
     </div>
     <div class="slider-container" id="menu-items-slider-container">
       <label for="itemsSlider" class="slider-label">Items:</label>

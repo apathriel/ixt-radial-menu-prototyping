@@ -1,11 +1,12 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import RadialMenu from "./components/radialMenu.vue";
+import PieMenu from './components/pieMenu.vue'
 import UIModifier from "./components/menuUIModifier.vue";
 
 const menuVisible = ref(false);
 const numMenuItems = ref(12);
-const menuRadius = ref(200);
+const menuRadius = ref(500);
 const cursorX = ref(0);
 const cursorY = ref(0);
 
@@ -25,7 +26,7 @@ onMounted(() => {
 <template>
   <h1 style="user-select: none;">This is a radial menu prototype</h1>
   <UIModifier v-model:radius="menuRadius" v-model:menuItems="numMenuItems" />
-  <RadialMenu
+  <PieMenu
     :numItems="numMenuItems"
     :visible="menuVisible"
     :menuPosX="cursorX"
